@@ -3,9 +3,9 @@
 https://github.com/Team-Code/KA_Offline -->
 <html> 
  <head>
-    <title>BacMan In Space</title> 
+    <title>ShooterDemo UNGKBH15</title> 
  <body>
- <h1 align="center">BacMan In Space</h1>
+ <h1 align="center">pac-man in space</h1>
   
     <p align="center"> 
   
@@ -260,8 +260,6 @@ var keyPressed = function()
 
 };
 
-var pauseGame = false;
-
 //her sættes de slippede knapper til false
 var keyReleased = function()
 {
@@ -279,20 +277,6 @@ if(key.toString()==='w')
   if(key.toString()==='d')
     {       
     keys.d =false;
-  }
-
-  if (key.toString()==='p')
-  {       
-  
-    if(pauseGame == false){
-    frameRate(0.0000000001);
-  pauseGame = true;
-  }else
-{       
-  pauseGame = false;
-    frameRate(30);
-  }
-
   }
 
 };
@@ -404,21 +388,21 @@ draw = function() {
     
     fill(0,0,0);
     textSize(20)
-    text(" "+doubleDamagePrice+" point", 115, 590);
+    text(" "+doubleDamagePrice+" point's", 115, 590);
 
 
 
     fill(0,0,0);
     textSize(20)
-    text(" 100 point", 350, 590);
+    text(" 100 point's", 350, 590);
 
     fill (0,255,0)
     textSize(30);
-    text("point: " + score,56,45);
+    text("point's: " + score,56,45);
 
     fill (0,255,0)
     textSize(30);
-    text("health: " + health,870,45);
+    text("health" + health,870,45);
 
   //først sætte vi hovedpersonens hastighed, efter hvilke knapper der er holdt inde
     mainCharacter.dirX = 0;
@@ -462,8 +446,6 @@ draw = function() {
    bullets = [];
    score = 0;
    health = 3;
-   doubleDamagePrice = 20;
-   bulletDamage = 2;
    mainCharacter = {
   
    x : width / 2,
