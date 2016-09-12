@@ -3,9 +3,9 @@
 https://github.com/Team-Code/KA_Offline -->
 <html> 
  <head>
-    <title>BacMan In Space</title> 
+    <title>ShooterDemo UNGKBH15</title> 
  <body>
- <h1 align="center">BacMan In Space</h1>
+ <h1 align="center">pac-man in space</h1>
   
     <p align="center"> 
   
@@ -16,14 +16,10 @@ https://github.com/Team-Code/KA_Offline -->
 
  
 
-
-
-
  <!-- Run all the JavaScript stuff -->
  <!-- Include the processing.js library -->
  <!-- See https://khanacademy.zendesk.com/hc/en-us/articles/202260404-What-parts-of-ProcessingJS-does-Khan-Academy-support- for differences -->
  <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
- <script src="js.cookie.js"></script>
  <script>
     var health = 3;
     var score=0;
@@ -37,12 +33,10 @@ https://github.com/Team-Code/KA_Offline -->
     
     //funktionskald der bestemmer hvor billedet bliver tegnet fra (centrum af billedet her, men der kan også bruges CORNER (hjørne))
     imageMode(CENTER);
-
-
-
+    
     //billeder loades fra lokale filer til variable ved at skrive stien til dem to gange som nedenunder
     
-    /* @pjs preload="bullet.pnggreen"; */
+    /* @pjs preload="bullet.png"; */
     var bulletImage = loadImage("bullet.png");
         
     /* @pjs preload="mainCharacter.png"; */
@@ -58,7 +52,7 @@ https://github.com/Team-Code/KA_Offline -->
     var orangeenemyimage = loadImage("orange enemy.png");
 
       /* @pjs preload="green enemy.png"; */
-    var greenenemyImage = loadImage(" enemy.png");
+    var greenenemyImage = loadImage("green enemy.png");
 
       /* @pjs preload="outo.png"; */
     var outo = loadImage("outo.png");
@@ -124,36 +118,6 @@ var mainCharacter = {
   var mainCharacterPixelSize = 32;
   var bulletPixelSize = 10;
   var enemySize = 15;
-
-  /**
-
-INDLÆS GEMT DATA
-
-  **/
-
-  try{
-    score = parseInt(Cookies.get('score'));
-    enemies = JSON.parse(Cookies.get('enemies'));
-
-    //Cookies.set('enemies',JSON.stringify(enemies));
-    }catch(error){
-    //score = parseInt(Cookies.get('enemy'));
-    }
-
-/*
-    catch(error){
-    score = parseInt(Cookies.get('blue enemy'));
-    }catch(error){
-    score = parseInt(Cookies.get('green enemy'));
-    }catch(error){
-    score = parseInt(Cookies.get('orange enemy'));
-    }catch(error){
-
-    }
-*/
-
-    if(score == null)
-      score = 0;
   
   //******** SPIL KODE ********
 
@@ -296,8 +260,6 @@ var keyPressed = function()
 
 };
 
-var pauseGame = false;
-
 //her sættes de slippede knapper til false
 var keyReleased = function()
 {
@@ -315,20 +277,6 @@ if(key.toString()==='w')
   if(key.toString()==='d')
     {       
     keys.d =false;
-  }
-
-  if (key.toString()==='p')
-  {       
-  
-    if(pauseGame == false){
-    frameRate(0.0000000001);
-  pauseGame = true;
-  }else
-{       
-  pauseGame = false;
-    frameRate(30);
-  }
-
   }
 
 };
@@ -440,21 +388,21 @@ draw = function() {
     
     fill(0,0,0);
     textSize(20)
-    text(" "+doubleDamagePrice+" point", 115, 590);
+    text(" "+doubleDamagePrice+" point's", 115, 590);
 
 
 
     fill(0,0,0);
     textSize(20)
-    text(" 100 point", 350, 590);
+    text(" 100 point's", 350, 590);
 
     fill (0,255,0)
     textSize(30);
-    text("point: " + score,56,45);
+    text("point's: " + score,56,45);
 
     fill (0,255,0)
     textSize(30);
-    text("health: " + health,870,45);
+    text("health" + health,870,45);
 
   //først sætte vi hovedpersonens hastighed, efter hvilke knapper der er holdt inde
     mainCharacter.dirX = 0;
@@ -498,8 +446,6 @@ draw = function() {
    bullets = [];
    score = 0;
    health = 3;
-   doubleDamagePrice = 20;
-   bulletDamage = 2;
    mainCharacter = {
   
    x : width / 2,
@@ -623,28 +569,9 @@ draw = function() {
   image(greenenemyImage,enemy.x,enemy.y, enemySize + enemy.health ,enemySize + enemy.health );
   }else
   image(orangeenemyimage,enemy.x,enemy.y, enemySize + enemy.health ,enemySize + enemy.health );
+        
+    }
     
-
-
-   Cookies.set('score', score);     
-    
-
-    
-   //Cookies.set('enemy', enemy); 
-    
-
-   //Cookies.set('blue enemy', blueEnemy);  
-    
-
-   //Cookies.set('orange enemy', orangeEnemy);  
-    
-
-   //Cookies.set('green enemy', greenEnemy);  
-    
-}
-
-Cookies.set('enemies',JSON.stringify(enemies));
-
 };
     
     }};
