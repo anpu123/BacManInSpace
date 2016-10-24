@@ -45,13 +45,7 @@ https://github.com/Team-Code/KA_Offline -->
 
     //billeder loades fra lokale filer til variable ved at skrive stien til dem to gange som nedenunder
     
-<<<<<<< HEAD
-       
-=======
-    /* @pjs preload="bullet.pnggreen"; */
-    var bulletImage = loadImage("bullet.png");
-        
->>>>>>> 987c346b28a90f1be6fb873605b8ece1f1a16cc2
+
     /* @pjs preload="mainCharacter.png"; */
     var mainCharacterImage = loadImage("mainCharacter.png");
        
@@ -174,7 +168,7 @@ INDLÆS GEMT DATA
   **/
 
   try{
-<<<<<<< HEAD
+
     coins = parseInt(Cookies.get('coins'));
     enemies = JSON.parse(Cookies.get('enemies'));
 
@@ -199,8 +193,7 @@ INDLÆS GEMT DATA
       coins = 0;
 
       try{
-=======
->>>>>>> 987c346b28a90f1be6fb873605b8ece1f1a16cc2
+
     score = parseInt(Cookies.get('score'));
     enemies = JSON.parse(Cookies.get('enemies'));
 
@@ -546,15 +539,13 @@ draw = function() {
 
     fill (0,255,0)
     textSize(30);
-<<<<<<< HEAD
+
     text("point: " + coins,56,45);
 
         fill (0,255,0)
     textSize(30);
     //text("point: " + score,56,45);
-=======
-    text("point: " + score,56,45);
->>>>>>> 987c346b28a90f1be6fb873605b8ece1f1a16cc2
+
 
     fill (0,255,0)
     textSize(30);
@@ -742,8 +733,6 @@ draw = function() {
   image(greenenemyImage,enemy.x,enemy.y, enemySize + enemy.health ,enemySize + enemy.health );
   }else
   image(orangeenemyimage,enemy.x,enemy.y, enemySize + enemy.health ,enemySize + enemy.health );
-<<<<<<< HEAD
-    
 
 
    Cookies.set('coins', coins);
@@ -766,25 +755,6 @@ draw = function() {
 
    //Cookies.set('orange enemy', orangeEnemy);  
     
-
-=======
-    
-
-
-   Cookies.set('score', score);     
-    
-
-    
-   //Cookies.set('enemy', enemy); 
-    
-
-   //Cookies.set('blue enemy', blueEnemy);  
-    
-
-   //Cookies.set('orange enemy', orangeEnemy);  
-    
-
->>>>>>> 987c346b28a90f1be6fb873605b8ece1f1a16cc2
    //Cookies.set('green enemy', greenEnemy);  
     
 }
