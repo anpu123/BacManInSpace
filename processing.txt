@@ -1,0 +1,12 @@
+class kugle {
+  var x;
+  var y;
+
+  kugle(var init_x,var init_y) {
+    x = init_x;
+    y = init_y;
+  }
+}
+
+
+var kugle_en = new kugle(x,y);
