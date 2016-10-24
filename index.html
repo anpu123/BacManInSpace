@@ -45,8 +45,7 @@ https://github.com/Team-Code/KA_Offline -->
 
     //billeder loades fra lokale filer til variable ved at skrive stien til dem to gange som nedenunder
     
-
-    /* @pjs preload="mainCharacter.png"; */
+/* @pjs preload="mainCharacter.png"; */
     var mainCharacterImage = loadImage("mainCharacter.png");
        
       /* @pjs preload="enemy.png"; */
@@ -59,7 +58,7 @@ https://github.com/Team-Code/KA_Offline -->
     var orangeenemyimage = loadImage("orange enemy.png");
 
       /* @pjs preload="green enemy.png"; */
-    var greenenemyImage = loadImage(" enemy.png");
+    var greenenemyImage = loadImage("green enemy.png");
 
       /* @pjs preload="outo.png"; */
     var outo = loadImage("outo.png");
@@ -69,6 +68,31 @@ https://github.com/Team-Code/KA_Offline -->
 
      /* @pjs preload="boss.png"; */
     var boss = loadImage("boss.png");
+
+
+    /* @pjs preload="mainCharacter.png"; */
+    var mainCharacterImage1 = loadImage("mainCharacter.png");
+       
+      /* @pjs preload="enemy.png"; */
+    var enemyImage1 = loadImage("enemy.png");
+    
+      /* @pjs preload="blue enemy.png"; */
+    var blueEnemyImage1 = loadImage("blue enemy.png");
+
+      /* @pjs preload="orange enemy.png"; */
+    var orangeenemyimage1 = loadImage("orange enemy.png");
+
+      /* @pjs preload="green enemy.png"; */
+    var greenenemyImage1 = loadImage("green enemy.png");
+
+      /* @pjs preload="outo.png"; */
+    var outo1 = loadImage("outo.png");
+    
+      /* @pjs preload="X2.png"; */
+    var X21 = loadImage("X2.png");    
+
+     /* @pjs preload="boss.png"; */
+    var boss1 = loadImage("boss.png");
 
 //ANDET LEVEL 
     /* @pjs preload="mainCharacte2.png"; */
@@ -99,9 +123,7 @@ https://github.com/Team-Code/KA_Offline -->
 
 //******SPIL VARIABLE******
 
-//level
 var currentLevel = 1;
-var oldLevel = 1;
 
 //liste med affyrrede skud og levende fjender 
 var bullets = [];
@@ -502,14 +524,16 @@ boss = boss2;
 
 var makeLevel1 = function(){
 
-mainCharacterImage2 = mainCharacterImage;
-enemyImage2 = enemyImage;
-blueEnemyImage2 = blueEnemyImage;
-greenenemyImage2 = greenenemyImage;
-orangeenemyimage2 = orangeenemyimage;
-boss = boss2;
+mainCharacterImage = mainCharacterImage1;
+enemyImage = enemyImage1;
+blueEnemyImage = blueEnemyImage1;
+greenenemyImage = greenenemyImage1;
+orangeenemyimage = orangeenemyimage1;
+boss = boss1;
 
 };
+//level
+makeLevel1();
 
 
 
@@ -589,6 +613,7 @@ draw = function() {
    //RESET GAME HVIS HEALTH == 0
 
    if (health == 0){
+    makeLevel1();
    enemies = [];
    bullets = [];
    coins = 0;
