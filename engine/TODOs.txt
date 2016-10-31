@@ -1,0 +1,10 @@
+/*
+1. Boss
+
+2. Menu
+
+3. Max to upgrades pr level
+
+4. Købe liv (max 3)
+
+*/
